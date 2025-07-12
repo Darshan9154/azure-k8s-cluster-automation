@@ -1,0 +1,14 @@
+- name: Copy worker.sh to worker node
+  ansible.builtin.copy:
+    src: files/worker.sh
+    dest: /home/azureuser/worker.sh
+    mode: '0755'
+
+- name: Copy join command to worker node
+  ansible.builtin.copy:
+    src: /tmp/kubeadm_join_cmd.sh
+    dest: /tmp/kubeadm_join_cmd.sh
+    mode: '0755'
+
+- name: Run worker.sh script
+  ansible.builtin.shell: bash /home/azureuser/worker.sh

@@ -1,0 +1,11 @@
+- name: Setup Kubernetes Master Node
+  hosts: master
+  become: yes
+  roles:
+    - master
+
+- name: Setup Kubernetes Worker Node
+  hosts: workers
+  become: yes
+  roles:
+    - worker

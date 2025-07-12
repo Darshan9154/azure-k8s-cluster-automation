@@ -1,0 +1,14 @@
+- name: Copy master.sh to master node
+  ansible.builtin.copy:
+    src: files/master.sh
+    dest: /home/azureuser/master.sh
+    mode: '0755'
+
+- name: Run master.sh script
+  ansible.builtin.shell: bash /home/azureuser/master.sh
+
+- name: Fetch kubeadm join command from master
+  ansible.builtin.fetch:
+    src: /tmp/kubeadm_join_cmd.sh
+    dest: /tmp/kubeadm_join_cmd.sh
+    flat: yes
