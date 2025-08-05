@@ -54,3 +54,27 @@ variable "worker_node_count" {
   type        = number
   default     = 1
 }
+
+# --------------------------------------------
+# 🔹 Azure Container Registry (ACR)
+# --------------------------------------------
+
+variable "acr_name" {
+  type        = string
+  description = "Globally unique name for ACR"
+}
+variable "key_vault_name" {
+  description = "Name of the Key Vault"
+  type        = string
+}
+
+variable "tenant_id" {
+  description = "Tenant ID (from your .env)"
+  type        = string
+}
+
+variable "object_id" {
+  description = "Object ID of your service principal or user"
+  type        = string
+}
+
