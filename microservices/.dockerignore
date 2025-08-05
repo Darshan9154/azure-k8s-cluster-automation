@@ -1,0 +1,7 @@
+# .dockerignore
+mongo-data
+mysql_order
+mysql_inventory
+mysql_keycloak_data
+target
+*.log
